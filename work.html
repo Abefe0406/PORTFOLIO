@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="work.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a6ce87662d.js" crossorigin="anonymous"></script>
+    <title>More Works</title>
+</head>
+<body>
+    <div id="offline-message">Not connected to the internet. Please check your connection.</div>
+    <div class="p-container" id="portfolio-container">
+    <div class="container">
+        <nav class="navbar">
+            <nav class="nav-items">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="back-text">Back</span>
+                </a>
+            </nav>
+        </nav>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-titles">More Works</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="webdesign.jpg">
+                    <div class="layer">
+                        <h3>Web Design</h3>
+                        <p>Creating visually appealing and user-friendly websites that provide an engaging online experience.</p>
+                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="vassistant.jpg">
+                    <div class="layer">
+                        <h3>Virtual Assisting</h3>
+                        <p>Streamlining administrative tasks and enhancing communication within teams.</p>
+                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="grapdesign.jpg">
+                    <div class="layer">
+                        <h3>Graphics Designing</h3>
+                        <p>Using creativity and technology to convey ideas through imagery, typography, and layout</p>
+                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function checkConnection() {
+                    if (navigator.onLine) {
+                        document.getElementById('offline-message').style.display = 'none';
+                        document.getElementById('portfolio-container').style.display = 'block';
+                    } else {
+                        document.getElementById('offline-message').style.display = 'block';
+                        document.getElementById('portfolio-container').style.display = 'none';
+                    }
+                }
+        
+                // Check connection on page load
+                window.onload = checkConnection;
+        
+                // Listen for online and offline events
+                window.addEventListener('online', () => {
+                    location.reload(); // Refresh the page when back online
+                });
+        
+                window.addEventListener('offline', checkConnection);
+            </script>
+</body>
+</html>
